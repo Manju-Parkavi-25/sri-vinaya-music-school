@@ -1,1 +1,719 @@
-/* You can add global styles to this file, and also import other style files */
+/* Main SCSS file for Carnatic Music Teacher Portfolio */
+
+/* Import Bootstrap Icons */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+/* Custom Fonts - Importing a traditional-looking font that complements Carnatic music themes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+
+/* Variables */
+:root {
+  --primary-color: #9c2c2c;
+  --secondary-color: #f3c78e;
+  --accent-color: #ffd700;
+  --dark-color: #2b2b2b;
+  --light-color: #f8f9fa;
+  --traditional-bg: #fbf7ed;
+  --traditional-accent: #c19a6b;
+  --text-color: #333333;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --transition: all 0.3s ease-in-out;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  background-color: var(--traditional-bg);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+  
+  &:hover {
+    color: darken(#9c2c2c, 10%);
+  }
+}
+
+.navbar {
+
+  background-color: #fff; // or any color you prefer
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.navbar-scrolled {
+  background-color: #fff; // or any color you prefer
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.5);
+    transition: var(--transition);
+    
+    &:hover {
+      transform: scale(1.1);
+      background-color: darken(#25D366, 10%);
+    }
+    
+    i {
+      font-size: 2rem;
+    }
+  }
+}
+
+/* Footer */
+.footer-section {
+  background-color: var(--dark-color);
+  color: #fff;
+  
+  a {
+    color: var(--secondary-color);
+    
+    &:hover {
+      color: lighten(#f3c78e, 10%);
+    }
+  }
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 991.98px) {
+  .hero-section {
+    min-height: auto;
+    padding: 5rem 0;
+    
+    h1 {
+      font-size: 3.5rem;
+    }
+    
+    .teacher-image {
+      max-width: 250px;
+    }
+  }
+  
+  .section-title h2 {
+    font-size: 2.2rem;
+  }
+  
+  .testimonials-section {
+    .carousel-control-prev {
+      left: 0;
+    }
+    
+    .carousel-control-next {
+      right: 0;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero-section {
+    h1 {
+      font-size: 3rem;
+    }
+    
+    .teacher-image-container {
+      margin-top: 2rem;
+    }
+  }
+  
+  .about-section .musical-journey,
+  .achievement-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .admission-highlight {
+    margin-top: 2rem;
+  }
+  
+  .section-title h2 {
+    font-size: 2rem;
+  }
+  
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    
+    a {
+      width: 50px;
+      height: 50px;
+      
+      i {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: var(--traditional-bg);
+  position: relative;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, #fff 0%, var(--traditional-bg) 100%);
+    z-index: 1;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .contact-info {
+    background: linear-gradient(135deg, rgba(156, 44, 44, 0.9) 0%, rgba(193, 154, 107, 0.9) 100%);
+    border-radius: var(--border-radius);
+    color: #fff;
+    height: 100%;
+    box-shadow: var(--box-shadow);
+    
+    h3 {
+      font-weight: 600;
+      position: relative;
+      display: inline-block;
+      
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: #fff;
+      }
+    }
+    
+    .contact-icon {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      
+      i {
+        font-size: 1.2rem;
+      }
+    }
+    
+    .social-links {
+      .social-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #fff;
+        transition: var(--transition);
+        
+        &:hover {
+          background-color: #fff;
+          
+          &.whatsapp {
+            color: #25D366;
+          }
+          
+          &.instagram {
+            color: #E1306C;
+          }
+          
+          &.youtube {
+            color: #FF0000;
+          }
+          
+          &.facebook {
+            color: #1877F2;
+          }
+        }
+        
+        i {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+  
+  .contact-form {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    
+    h3 {
+      color: var(--primary-color);
+      font-weight: 600;
+      position: relative;
+      display: inline-block;
+      
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--primary-color);
+      }
+    }
+    
+    .form-control, .form-select {
+      border-color: #ddd;
+      border-radius: var(--border-radius);
+      padding: 10px 15px;
+      
+      &:focus {
+        box-shadow: none;
+        border-color: var(--primary-color);
+      }
+    }
+    
+    textarea.form-control {
+      min-height: 120px;
+    }
+  }
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  background-color: #fff;
+  position: relative;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, var(--traditional-bg) 0%, #fff 100%);
+    z-index: 1;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .testimonial-card {
+    background-color: var(--traditional-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin: 0 auto;
+    max-width: 800px;
+    
+    .quote-icon {
+      font-size: 2rem;
+      color: var(--primary-color);
+      opacity: 0.5;
+    }
+    
+    .testimonial-text {
+      font-size: 1.1rem;
+      font-style: italic;
+    }
+    
+    .testimonial-author {
+      h5 {
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+    }
+  }
+  
+  .carousel-control-prev, 
+  .carousel-control-next {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+    
+    &:hover {
+      opacity: 1;
+    }
+  }
+  
+  .carousel-control-prev {
+    left: -20px;
+  }
+  
+  .carousel-control-next {
+    right: -20px;
+  }
+}
+
+/* Programs Section */
+.programs-section {
+  background-color: var(--traditional-bg);
+  position: relative;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, #fff 0%, var(--traditional-bg) 100%);
+    z-index: 1;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .program-content {
+    h3 {
+      color: var(--primary-color);
+      margin-bottom: 2rem;
+      position: relative;
+      
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 2px;
+        background-color: var(--primary-color);
+      }
+    }
+    
+    .program-feature {
+      .program-icon {
+        background-color: var(--primary-color);
+        color: #fff;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        
+        i {
+          font-size: 1.5rem;
+        }
+      }
+      
+      h5 {
+        color: var(--primary-color);
+        margin-bottom: 5px;
+      }
+      
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  .admission-highlight {
+    background: linear-gradient(135deg, rgba(156, 44, 44, 0.9) 0%, rgba(193, 154, 107, 0.9) 100%);
+    border-radius: var(--border-radius);
+    color: #fff;
+    box-shadow: var(--box-shadow);
+    
+    .admission-badge {
+      background-color: var(--accent-color);
+      color: var(--dark-color);
+      display: inline-block;
+      padding: 5px 15px;
+      border-radius: 30px;
+      font-weight: 600;
+      transform: rotate(-2deg);
+    }
+    
+    h3 {
+      font-family: 'Tangerine', cursive;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+    
+    .admission-details {
+      i {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+/* Achievements Section */
+.achievements-section {
+  background-color: #fff;
+  position: relative;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, var(--traditional-bg) 0%, #fff 100%);
+    z-index: 1;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .achievement-card {
+    background-color: var(--traditional-bg);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--box-shadow);
+    
+    &:hover {
+      transform: translateY(-10px);
+    }
+    
+    .achievement-icon {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      
+      i {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--traditional-accent) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+    
+    h4 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    
+    p {
+      color: var(--text-color);
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* Custom Buttons */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  
+  &:hover, &:focus {
+    background-color: darken(#9c2c2c, 10%);
+    border-color: darken(#9c2c2c, 10%);
+  }
+}
+
+.btn-outline-light {
+  color: #fff;
+  border-color: #fff;
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Section Title Styling */
+.section-title {
+  margin-bottom: 3rem;
+  
+  h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    font-family: 'Tangerine', cursive;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .decorative-border {
+    height: 3px;
+    width: 80px;
+    background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+    margin: 0 auto;
+  }
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 0 6rem;
+  color: #fff;
+  background: url('https://images.unsplash.com/photo-1614112539959-277faaa3cfed?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80') no-repeat center center;
+  background-size: cover;
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+  
+  .carnatic-design-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M30,10 Q50,0 70,10 Q90,20 90,40 Q90,60 70,70 Q50,80 30,70 Q10,60 10,40 Q10,20 30,10 Z" fill="none" stroke="rgba(243,199,142,0.1)" stroke-width="1"/><path d="M35,15 Q50,5 65,15 Q80,25 80,40 Q80,55 65,65 Q50,75 35,65 Q20,55 20,40 Q20,25 35,15 Z" fill="none" stroke="rgba(243,199,142,0.08)" stroke-width="1"/><path d="M40,20 Q50,15 60,20 Q70,25 70,40 Q70,55 60,60 Q50,65 40,60 Q30,55 30,40 Q30,25 40,20 Z" fill="none" stroke="rgba(243,199,142,0.06)" stroke-width="1"/></svg>') repeat;
+    opacity: 0.5;
+    z-index: 2;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 3;
+  }
+  
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: 'Tangerine', cursive;
+  }
+  
+  h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+  }
+  
+  .teacher-image-container {
+    position: relative;
+    padding: 1rem;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 2px solid var(--secondary-color);
+      transform: rotate(3deg);
+      z-index: -1;
+    }
+  }
+  
+  .teacher-image {
+    max-width: 300px;
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color);
+    box-shadow: var(--box-shadow);
+  }
+}
+
+/* About Section */
+.about-section {
+  background-color: var(--traditional-bg);
+  padding: 5rem 0;
+  
+  .about-content {
+    h3 {
+      color: var(--primary-color);
+      font-weight: 600;
+      position: relative;
+      display: inline-block;
+      
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--primary-color);
+      }
+    }
+    
+    .contact-details {
+      i {
+        color: var(--primary-color);
+        font-size: 1.2rem;
+      }
+    }
+  }
+  
+  .musical-journey {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    
+    h3 {
+      color: var(--primary-color);
+      font-weight: 600;
+      position: relative;
+      display: inline-block;
+      
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--primary-color);
+      }
+    }
+    
+    .journey-list {
+      list-style: none;
+      padding-left: 0;
+      
+      li {
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        
+        i {
+          color: var(--primary-color);
+          margin-right: 10px;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
